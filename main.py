@@ -9,6 +9,10 @@ def simple_calculator():
         # 마지막에 엔터 눌러서 프로그램 종료
         if input_str == "":
             break
+        # 특정숫자 입력시 이스터에그 메세지 출력
+        elif input_str == "1111":
+            print("=> 11/11 is Pepero Days!")
+            return 0
 
         # 인풋값 확인
         if input_str.isdigit():
