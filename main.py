@@ -19,6 +19,11 @@ def simple_calculator():
             result += int(input_str)
         elif input_str == "+":
             continue
+        elif input_str == "-":
+            # 뺄셈 입력 추가
+            input_str = input()
+            if input_str.isdigit():
+                result -= int(input_str)
         else:
             # 오류 발생 확인 하지만 입력 끝까지 받기
             error_occurred = True
