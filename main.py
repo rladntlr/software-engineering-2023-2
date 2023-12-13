@@ -1,7 +1,7 @@
 # 이스터에그 값인지 확인하는 함수
 def isEasteregg(val):
     if val == "1111":
-        print("=> 11/11 is Pepero Days!")
+        print("[EVENT]\"11/11 is Pepero Days!\"")
         return True
 
     return False
@@ -141,5 +141,5 @@ def simple_calculator():
             print("error!")
             return
 
-
-simple_calculator()
+if __name__ == '__main__':
+    simple_calculator()
