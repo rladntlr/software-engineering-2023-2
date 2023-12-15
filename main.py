@@ -36,7 +36,7 @@ def add(result):
 
     # 에러 메세지와 출력값
     if error_occurred:
-        print("error!")
+        print("[System] ERROR!")
     else:
         print(result)
 
@@ -67,7 +67,7 @@ def sub(result):
             error_occurred = True
 
     if error_occurred:
-        print("error!")
+        print("[System] ERROR!")
     else:
         print(result)
 
@@ -101,7 +101,7 @@ def multi(result):
             error_occured = True
 
     if error_occured:
-        print("error!")
+        print("[System] ERROR!")
     else:
         print(result)
 
@@ -112,7 +112,7 @@ def simple_calculator():
     # 1. 초기값을 입력받는 부분
     val = input()
     if val == "=":
-        print("error!")
+        print("[System] ERROR!")
     elif isEasteregg(val):
         return
     elif val.isdigit():
@@ -141,7 +141,7 @@ def simple_calculator():
     # 3. 초반부터 에러가 난 경우 "="이 나올 때까지 반복하는 부분
     while True:
         if input() == "=":
-            print("error!")
+            print("[System] ERROR!")
             return
 
 if __name__ == '__main__':
