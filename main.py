@@ -1,9 +1,12 @@
 # 이스터에그 값인지 확인하는 함수
 def isEasteregg(val):
+    eventMsg = "[EVENT] "
     if val == "1111":
-        print("[EVENT]\"11/11 is Pepero Days!\"")
+        print(eventMsg+"11/11 is Pepero Days!")
         return True
-
+    elif val == "1015":
+        print(eventMsg+"전북대 개교기념일입니다.")
+        return True
     return False
 
 
