@@ -129,16 +129,13 @@ def multi(result):
     OK
 """
 def factorial(n):
-    if(n == 1):
+    if (n == 1):
         return 1
-    # Add: 2.1
-    elif(n == 0):
-        return 1
-    # Add: 3.1 / Changes: 4.1
-    elif(n < 0):
-        return "[ERROR] Out Of Range"
 
-    return factorial(n-1) * n   # Changes: 5.1
+    elif (n == 0):
+        return 1
+
+    return factorial(n - 1) * n
     
 
 def simple_calculator():
@@ -173,8 +170,12 @@ def simple_calculator():
             multi(result)
             return
         if opr == "!":
-            print("=", factorial(result))
-            return
+            if (int(val) < 0):
+                print("[ERROR] Out of Range!")
+                return
+            else:
+                print("=", factorial(result))
+                return
 
     # 3. 초반부터 에러가 난 경우 "="이 나올 때까지 반복하는 부분
     # "!"이 나올 경우에도 다르게 처리
