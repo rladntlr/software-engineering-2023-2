@@ -106,6 +106,41 @@ def multi(result):
         print(result)
 
 
+"""
+1. testCase input: 3, output: 6
+    OK
+2. testCase input: 0, output: 1
+    2.1. add elif: 1st if-else part
+        elif(n == 0):
+            return 1
+    OK
+3. testCase input: -1, output: "[ERROR] Out Of Range"
+    3.1. add elif: 1st if-else part
+        elif(n == -1):
+            return "[ERROR] Out Of Range"
+    OK
+4. testCase input: -3, output: "[ERROR] Out Of Range"
+    4.1. change code: 2nd elif part of 1st if-else part
+        elif(n == -1) -> elif(n < 0)
+    OK
+5. testCase input: 5, output: 120
+    2.1. change code: last return part
+        factorial(n-1) + n -> factorial(n-1) * n
+    OK
+"""
+def factorial(n):
+    if(n == 1):
+        return 1
+    # Add: 2.1
+    elif(n == 0):
+        return 1
+    # Add: 3.1 / Changes: 4.1
+    elif(n < 0):
+        return "[ERROR] Out Of Range"
+
+    return factorial(n-1) * n   # Changes: 5.1
+    
+
 def simple_calculator():
     isError = False
 
@@ -137,11 +172,19 @@ def simple_calculator():
         if opr == "*":
             multi(result)
             return
+        if opr == "!":
+            print("=", factorial(result))
+            return
 
     # 3. 초반부터 에러가 난 경우 "="이 나올 때까지 반복하는 부분
+    # "!"이 나올 경우에도 다르게 처리
     while True:
-        if input() == "=":
+        endM = input()
+        if endM == "=":
             print("[System] ERROR!")
+            return
+        if endM == "!":
+            print("[ERROR] Input Error")
             return
 
 if __name__ == '__main__':
